@@ -1,0 +1,142 @@
+USE [property]
+GO
+/****** Object:  Table [dbo].[states]    Script Date: 07/12/2019 15:58:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[states](
+	[StateId] [int] NOT NULL,
+	[StateName] [varchar](20) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[StateId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[states] ([StateId], [StateName]) VALUES (1, N'Punjab')
+INSERT [dbo].[states] ([StateId], [StateName]) VALUES (2, N'Haryana')
+INSERT [dbo].[states] ([StateId], [StateName]) VALUES (3, N'Himachal Pradesh')
+INSERT [dbo].[states] ([StateId], [StateName]) VALUES (4, N'Chandigarh(UT)')
+/****** Object:  Table [dbo].[cities]    Script Date: 07/12/2019 15:58:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[cities](
+	[CityId] [int] NOT NULL,
+	[CityName] [varchar](20) NULL,
+	[StateId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CityId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (1, N'Amritsar', 1)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (2, N'Mohali', 1)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (3, N'Ludhiana', 1)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (4, N'Gurugram', 2)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (5, N'Karnal', 2)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (6, N'Panchkula', 2)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (7, N'Shimla', 3)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (8, N'Manali', 3)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (9, N'Kasauli', 3)
+INSERT [dbo].[cities] ([CityId], [CityName], [StateId]) VALUES (10, N'Chandigarh', 4)
+/****** Object:  Table [dbo].[Properties]    Script Date: 07/12/2019 15:58:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Properties](
+	[PropertyId] [int] NOT NULL,
+	[Area] [int] NULL,
+	[Rooms] [int] NULL,
+	[Age] [int] NULL,
+	[type] [varchar](20) NULL,
+	[Price] [int] NULL,
+	[CityId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PropertyId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (1, 180, 4, 0, N'House', 6204000, 1)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (2, 145, 3, 1, N'House', 2799000, 1)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (3, 127, 2, 1, N'House', 2800000, 1)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (4, 77, 2, 0, N'House', 1960000, 1)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (5, 105, 2, 1, N'House', 2300000, 1)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (6, 3889, 3, 1, N'House', 7000000, 2)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (7, 2500, 3, 3, N'House', 4290000, 2)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (8, 1095, 2, 7, N'House', 6200000, 2)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (9, 540, 3, 10, N'House', 2990000, 2)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (10, 1300, 3, 5, N'House', 5500000, 2)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (11, 704, 2, 7, N'House', 1890000, 2)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (12, 2010, 3, 2, N'House', 3640000, 7)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (13, 2670, 4, 1, N'House', 7500000, 7)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (14, 7080, 6, 1, N'House', 7550000, 7)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (15, 2000, 3, 3, N'House', 7000000, 7)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (16, 1819, 2, 3, N'House', 6900000, 7)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (17, 1000, 4, 4, N'House', 6100000, 7)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (18, 750, 2, 2, N'House', 3630000, 6)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (19, 2000, 3, 1, N'House', 7500000, 6)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (20, 2200, 3, 3, N'House', 5560000, 6)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (21, 3500, 5, 5, N'House', 8550000, 6)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (22, 2599, 3, 6, N'House', 6200000, 6)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (23, 2857, 3, 2, N'House', 4000000, 8)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (24, 865, 1, 5, N'House', 2000000, 8)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (25, 950, 2, 1, N'House', 5660000, 8)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (26, 3692, 1, 12, N'House', 2400000, 8)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (27, 3000, 6, 2, N'House', 3500000, 8)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (28, 2500, 3, 8, N'House', 6500000, 8)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (29, 5000, 3, 1, N'House', 8000000, 9)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (30, 10000, 7, 2, N'House', 39000000, 9)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (31, 7400, 2, 3, N'House', 3990000, 9)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (32, 1550, 2, 2, N'House', 4200000, 9)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (33, 1450, 2, 4, N'House', 3900000, 9)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (34, 20000, 3, 3, N'House', 12000000, 9)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (35, 2500, 4, 2, N'House', 7000000, 4)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (36, 645, 4, 3, N'House', 6550000, 4)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (37, 2600, 3, 4, N'House', 24000000, 4)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (38, 2368, 3, 5, N'House', 24000000, 4)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (39, 1000, 3, 2, N'House', 380000, 4)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (40, 200, 2, 3, N'House', 8200000, 4)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (41, 1000, 2, 2, N'House', 6000000, 5)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (42, 900, 4, 3, N'House', 3500000, 5)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (43, 1800, 3, 8, N'House', 4000000, 5)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (44, 2000, 3, 6, N'House', 6000000, 5)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (45, 4250, 5, 10, N'House', 35500000, 5)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (46, 891, 2, 6, N'House', 5500000, 5)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (47, 2450, 2, 5, N'House', 6950000, 10)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (48, 3750, 6, 2, N'House', 15500000, 10)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (49, 2250, 2, 7, N'House', 13500000, 10)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (50, 1080, 3, 8, N'House', 5200000, 10)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (51, 1400, 3, 10, N'House', 11000000, 10)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (52, 650, 2, 1, N'House', 2600000, 10)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (53, 2998, 2, 5, N'House', 32600000, 3)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (54, 4200, 5, 4, N'House', 16500000, 3)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (55, 1250, 5, 3, N'House', 6200000, 3)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (56, 2000, 4, 2, N'House', 17000000, 3)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (57, 1700, 2, 1, N'House', 6500000, 3)
+INSERT [dbo].[Properties] ([PropertyId], [Area], [Rooms], [Age], [type], [Price], [CityId]) VALUES (58, 4167, 3, 8, N'House', 4500000, 3)
+/****** Object:  ForeignKey [FK__cities__StateId__0519C6AF]    Script Date: 07/12/2019 15:58:30 ******/
+ALTER TABLE [dbo].[cities]  WITH CHECK ADD FOREIGN KEY([StateId])
+REFERENCES [dbo].[states] ([StateId])
+GO
+/****** Object:  ForeignKey [FK__Propertie__CityI__09DE7BCC]    Script Date: 07/12/2019 15:58:30 ******/
+ALTER TABLE [dbo].[Properties]  WITH CHECK ADD FOREIGN KEY([CityId])
+REFERENCES [dbo].[cities] ([CityId])
+GO
